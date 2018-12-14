@@ -2,10 +2,12 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 RDEPENDS_${PN} = "bash"
 
-SRC_URI += " \
+SRC_URI = "\
+	gitsm://gerrit.automotivelinux.org/gerrit/src/4a-hal-generic;protocol=https;nobranch=1 \
 	file://4a-hal-setup \
 	file://hal-4a-greenbox.json \
 "
+SRCREV = "sandbox/sdesneux/with-configs"
 
 do_install_append () {
 	# redo install (revert effect of fd78578b11990bc885651c52690dbcf9169bd7ac / SPEC-2011)
